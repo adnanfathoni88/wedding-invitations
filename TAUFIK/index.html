@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- icon font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- countdown -->
+    <link rel="stylesheet" href="countdown/css/simplyCountdown.theme.default.css" />
+    <script src="countdown/dist/simplyCountdown.min.js"></script>
+    <!-- AOS ANIMATE -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="position-relative">
+    <div class="content">
+        <!-- music -->
+        <audio id="background-music" autoplay loop>
+            <source src="./music/music-1.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- play -->
+        <a id="music-pause" onclick="musicPlay(false)" style="display: none;">
+            <i class="fa-regular spin fa-circle-pause text-white position-fixed p-4 end-0 z-3"></i>
+        </a>
+
+        <!-- pause -->
+        <a id="music-play" onclick="musicPlay(true)" style="display: none;">
+            <i class="fa-regular fa-circle-play spin text-white position-fixed p-4 end-0 z-3"></i>
+        </a>
+
+        <!-- hero -->
+        <div id="hero" class="position-relative">
+            <div class="hero-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div data-aos="zoom-in"
+                class="container d-flex justify-content-center align-items-center text-center h-100">
+                <div class="position-relative z-3">
+                    <h4 class="great-vibes-regular">Taufik &</h4>
+                    <h4>Putri</h4>
+                    <p class="mt-4 text-white">
+                        Kepada Bapak/Ibu/Saudara/i
+                    </p>
+                    <div class="hero-penerima h-25 w-100 p-4 rounded text-black">
+                        <div id="recipient">
+                            <!-- Nama penerima akan ditampilkan di sini -->
+                        </div>
+
+                    </div>
+                    <a onclick="bukaUndangan()" class="btn btn-sm" style="margin-top: 50px;">Buka Undangan</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- detail -->
+        <section class="position-relative d-flex flex-column justify-content-center align-items-center" id="detail">
+            <div class="detail-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100 ">
+                <div class="detail-body w-75">
+                    <div data-aos="fade-up" class="mt-4 acara-dimulai d-flex flex-column align-items-center">
+                        <h4>Taufik & Putri</h4>
+                        <p>Kami berharap Anda <br>
+                            menjadi bagian dari hari istimewa kami.</p>
+                        <div class="simply-countdown mt-3"></div>
+                        <h5 class="mt-3">15 September 2024</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- mempelai -->
+        <section class="position-relative d-flex flex-column justify-content-center align-items-center" id="mempelai">
+            <div class="mempelai-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100 ">
+                <div class="mempelai-body w-75">
+                    <div class="detail-sambutan mb-3">
+                        <p class="text-gold text-great-vibes">Assalamu'alaikum Wr. Wb. </p>
+                        <span>
+                            Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian
+                            untuk
+                            menghadiri acara
+                            pernikahan kami:
+                        </span>
+                    </div>
+                    <div class="mempelai-group">
+                        <div class="mempelai-item d-flex flex-column align-items-center rounded text-center p-2">
+                            <div class="foto-mempelai bg-danger mb-4">
+                                <img src="./img/person/men-4.jpeg" class="img-fluid rounded-circle" alt="">
+                            </div>
+                            <div>
+                                <h5 class="text-gold">Taufik Kapita</h5>
+                                <hr style="margin: 8px 0px;">
+                                <p class="opacity-75">Mempelai Pria</p>
+                            </div>
+                        </div>
+                        <span class="text-great-vibes" style="font-size: 20px;">
+                            &
+                        </span>
+                        <div class="mempelai-item d-flex flex-column align-items-center rounded p-2">
+                            <div class="foto-mempelai bg-danger mb-4">
+                                <img src="./img/person/women-1.jpeg" class="img-fluid rounded-circle" alt="">
+                            </div>
+                            <div>
+                                <h5 class="text-gold">Putri</h5>
+                                <hr style="margin: 8px 0px;">
+                                <p class="opacity-75">Mempelai Wanita</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- acara -->
+        <section class="position-relative d-flex flex-column justify-content-center align-items-center" id="acara">
+            <div class="acara-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100 w-75">
+                <div class="bg-cream text-dark rounded p-4 mb-4 w-100">
+                    <h4 class="text-dark text-great-vibes"><b>Akad Nikah</b></h4>
+                    <hr style="margin: 8px 0px;">
+                    <span>
+                        Minggu, 15 September 2024 <br>
+                        Pukul : 09.00 WIB <br>
+                    </span>
+                </div>
+                <div class="bg-cream text-dark rounded p-4">
+                    <h4 class="text-dark text-great-vibes"><b>Resepsi</b></h4>
+                    <hr style="margin: 8px 0px;">
+                    <span>
+                        September 2024 <br>
+                        Pukul : 09.00 WIB <br>
+                        Tempat : Tahunan RT.05 RW.04 Bulurejo Semin
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- lokasi -->
+        <section class="position-relative d-flex flex-column justify-content-center align-items-center" id="lokasi">
+            <div
+                class="container position-relative z-1 d-flex flex-column justify-content-center align-items-center text-center h-100 ">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3646116776135!2d110.73109057461316!3d-7.856856278094602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a375b70763b89%3A0x7caefe924f90a204!2sKAPITA%20SEMIN!5e0!3m2!1sid!2sid!4v1723905268682!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="mt-4 bg-gold rounded">
+                    <a href="https://maps.app.goo.gl/a3hEbiUYHBgySXZP9" type="button" class="btn bg-gold btn-sm">Buka di
+                        Google
+                        Maps</a>
+                </div>
+            </div>
+            <div class="lokasi-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+        </section>
+
+
+        <!-- gallery
+    <section id="gallery">
+        <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100">
+            <div data-aos="zoom-in" class="mb-4">
+                <h1>Gallery</h1>
+            </div>
+            <div class="row">
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/1.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/2.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/3.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/4.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/5.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/6.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/7.jpg" class="img-fluid" alt="">
+                </div>
+                <div data-aos="zoom-in-down" data-aos-duration="1500" class="col-lg-3 col-md-6">
+                    <img src="./img/product/8.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+        <!-- RSVP -->
+        <section id="rsvp" class="position-relative d-flex flex-column justify-content-center align-items-center">
+            <div class="rsvp-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div
+                class="position-relative container d-flex flex-column justify-content-center align-items-center text-center h-100">
+                <div data-aos="zoom-in-down">
+                    <h1 class="text-gold ">Form Kehadiran</h1>
+                    <p class="opacity-75">Harap konfirmasi kehadiran Anda dengan mengisi form di bawah ini.</p>
+                </div>
+                <div class="mt-2 w-100 text-center d-flex flex-column align-items-center justify-content-center">
+                    <form id="my-form" class="rsvp-form" method="post" style="width: 80%;"
+                        action="https://script.google.com/macros/s/AKfycbw_i2Ye3F0ZOQLBYUplg7PCXDH2198SOhok8n1COu2hiDMPPyfpp_jxe1Pmd8o_Uxa2/exec">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="ucapan" class="form-control"
+                                placeholder="Tulis ucapan di sini ..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" name="kehadiran">
+                                <option value="">-- Pilih --</option>
+                                <option value="1">Hadir</option>
+                                <option value="0">Tidak Hadir</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-lg w-100 bg-gold">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ucapan -->
+        <div id="ucapan">
+            <div class="border-wrapper">
+                <img class="b-top" src="./img/components/border-1.png" alt="Border Image">
+                <img class="b-bottom" src="./img/components/border-1.png" alt="Border Image">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-9" style="padding: 50px 0px 100px 0px;">
+                    <div class="ucapan-item position-relative z-1">
+                        <div id="disqus_thread" class="w-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- salam penutup -->
+        <section id="penutup" class="position-relative d-flex flex-column justify-content-center align-items-center">
+            <div class="penutup-child position-absolute">
+                <img src="./img/components/border-1.png" alt="">
+            </div>
+            <div
+                class="penutup-body container d-flex flex-column justify-content-center align-items-center text-center h-100">
+                <div data-aos="zoom-in-down" class="w-75">
+                    <p class="opacity-75">
+                        Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir
+                        dan
+                        memberikan doa
+                        restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+                    </p>
+                    <h6>
+                        Wassalamu'alaikum Wr. Wb.
+                    </h6>
+                    <h2 class="text-gold text-great-vibes">
+                        Taufik & Putri
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- wa -->
+        <!-- <section id="wa">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center text-center h-100">
+                <div data-aos="zoom-in-down">
+                    <h1>Butuh Bantuan?</h1>
+                    <p>Jika Anda memiliki pertanyaan atau butuh bantuan, silahkan hubungi kami melalui WhatsApp.</p>
+                    <a href="https://wa.me/6281234567890" class="btn btn-lg mt-2">Admin - 0856 xxxx xxxx</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+        <!-- copysright -->
+        <footer class="bg-dark text-center text-white pt-2 px-2" style="height: 100px;">
+            <span>&copy; 2024. Adnan Dev</span>
+        </footer>
+
+        <!-- menu -->
+        <section id="menu" class="position-fixed bottom-0 start-0">
+            <div class="container d-flex justify-content-center">
+                <div class="menu-icon-group d-flex justify-content-center text-center">
+                    <div class="mx-2 menu-icon">
+                        <a href="#detail">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </div>
+
+                    <div class="mx-2 menu-icon">
+                        <a href="#mempelai">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+
+                    <div class="mx-2 menu-icon">
+                        <a href="#acara">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </a>
+                    </div>
+
+                    <div class="mx-2 menu-icon">
+                        <a href="#rsvp">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- bootstrap -->
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+            </script>
+
+        <!-- AOS ANIMATE -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                AOS.init();
+            });
+        </script>
+
+        <!-- ucapan -->
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+
+            var disqus_config = function () {
+                this.page.url = 'https://127.0.0.1:3000/index.html';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = 'wedding-taufik-2024'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://adnandev.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+
+        <!-- countdown -->
+        <script>
+            simplyCountdown('.simply-countdown', {
+                year: 2024, // required
+                month: 7, // required
+                day: 20, // required
+                hours: 8, // Default is 0 [0-23] integer
+                minutes: 0, // Default is 0 [0-59] integer
+                seconds: 0, // Default is 0 [0-59] integer
+                words: { //words displayed into the countdown
+                    days: { singular: 'hari', plural: 'hari' },
+                    hours: { singular: 'jam', plural: 'jam' },
+                    minutes: { singular: 'menit', plural: 'menit' },
+                    seconds: { singular: 'detik', plural: 'detik' }
+                },
+            });
+        </script>
+
+        <!-- form submit -->
+        <script>
+            window.addEventListener("load", function () {
+                const form = document.getElementById('my-form');
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const data = new FormData(form);
+                    const action = e.target.action;
+                    fetch(action, {
+                        method: 'POST',
+                        body: data,
+                    })
+                        .then(() => {
+                            const toast = new bootstrap.Toast(document.querySelector('.toast'));
+
+                            // scroll to hero
+                            const heroElement = document.getElementById('hero');
+                            heroElement.scrollIntoView({ behavior: 'smooth' });
+
+                            toast.show();
+                            form.reset();
+                        })
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.addEventListener('keydown', event => {
+                if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 'i' || event.key === 'I')) {
+                    event.preventDefault();
+                }
+            });
+
+        </script>
+
+        <!-- nama penerima undangan  -->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const recipient = urlParams.get('to'); // Mengambil nilai parameter 'to'
+
+            if (recipient) {
+                document.getElementById('recipient').textContent = `${recipient}`;
+            } else {
+                document.getElementById('recipient').textContent = `Kepada Tamu Terhormat`;
+            }
+        </script>
+
+        <!-- buka undangan -->
+        <script>
+            function bukaUndangan() {
+                const menuSection = document.getElementById('menu');
+                document.getElementById("detail").scrollIntoView({ behavior: "smooth" });
+
+                // tambah data aos
+                setTimeout(() => {
+                    menuSection.style.display = 'block';
+
+                }, 100);
+                musicPlay(true);
+
+                var bodyScroll = document.body;
+                bodyScroll.style.overflow = 'auto';
+            }
+
+            function musicPlay(isPlay) {
+                var audio = document.getElementById('background-music');
+                var iconPlay = document.getElementById('music-play');
+                var iconPause = document.getElementById('music-pause');
+
+                if (isPlay) {
+                    audio.play();
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'block';
+                } else {
+                    audio.pause();
+                    iconPlay.style.display = 'block';
+                    iconPause.style.display = 'none';
+                }
+            }
+        </script>
+
+        <script>
+            const puppeteer = require('puppeteer');
+            function tes() {
+
+                (async () => {
+                    const browser = await puppeteer.launch({ headless: false });
+                    const page = await browser.newPage();
+                    await page.goto('https://web.whatsapp.com/');
+
+                    // Tunggu QR Code untuk pemindaian
+                    await page.waitForSelector('._1pY5');
+
+                    // Setelah pemindaian, lanjutkan ke pengiriman pesan
+                    const contacts = ['Contact1', 'Contact2']; // Daftar nama kontak
+                    const message = 'You are invited! Please click the link to view your invitation: http://127.0.0.1:3000/index.html?to=adnan';
+
+                    for (let contact of contacts) {
+                        // Cari kontak
+                        await page.click('._3F6oR');
+                        await page.keyboard.type(contact);
+                        await page.keyboard.press('Enter');
+
+                        // Kirim pesan
+                        await page.keyboard.type(message);
+                        await page.keyboard.press('Enter');
+                    }
+
+                    await browser.close();
+                })();
+            }
+        </script>
+    </div>
+</body>
+
+
+</html>

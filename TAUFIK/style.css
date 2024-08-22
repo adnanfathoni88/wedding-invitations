@@ -1,0 +1,424 @@
+:root {
+  --dark: #000000;
+  --gold: #e3b04b;
+  --cream: #f1d6ab;
+  --white: #f8f8f8;
+}
+
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+body {
+  overflow: hidden;
+  background-color: var(--dark) !important;
+  display: flex;
+  justify-content: center;
+}
+.row {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.col-md-3 {
+  padding: 0px !important;
+}
+
+.content {
+  width: 375px !important;
+}
+
+/* hero */
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100% - 5%);
+  width: calc(100% - 5%);
+}
+
+.hero-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#hero h4 {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 60px !important;
+  color: var(--gold);
+}
+
+#hero .hero-penerima {
+  background-color: var(--cream);
+}
+
+#hero {
+  background-color: var(--dark);
+  color: var(--gold);
+  height: 100vh;
+  max-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#hero .logo-group {
+  margin-top: 20px;
+  margin-left: 20px !important;
+  width: 200px !important;
+  border-radius: 10px;
+}
+
+#hero .logo {
+  height: 30px;
+}
+
+#hero .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+#hero a {
+  background-color: var(--gold);
+}
+
+#hero .selamat-datang {
+  font-size: 1.5rem;
+}
+
+/* detail */
+#detail {
+  min-height: 120vh;
+  background-color: var(--dark);
+  color: var(--white);
+}
+.detail-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100% - 5%);
+  width: calc(100% - 5%);
+}
+
+.detail-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#detail h4 {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 50px !important;
+  color: var(--gold);
+}
+
+#detail p {
+  font-size: 12px;
+  margin: 0px;
+}
+
+.detail-sambutan p {
+  font-size: 20px !important;
+}
+
+.detail-sambutan span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* mempelai */
+#mempelai {
+  min-height: 120vh;
+  background-color: var(--dark);
+  color: var(--white);
+}
+.mempelai-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100% - 5%);
+  width: calc(100% - 5%);
+}
+
+.mempelai-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#mempelai h4 {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 60px !important;
+  color: var(--gold);
+}
+
+#mempelai .mempelai-item p {
+  opacity: 0.8;
+  font-size: 12px;
+  margin: 0px;
+}
+
+.foto-mempelai {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* acara */
+.acara-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100vh - 5%);
+  width: calc(100vw - 5%);
+}
+
+.acara-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#acara {
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+#acara span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+#acara h4 {
+  font-size: 30px;
+}
+
+/* lokasi */
+.lokasi-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100vh - 5%);
+  width: calc(100vw - 5%);
+}
+
+.lokasi-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#lokasi {
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+#lokasi iframe {
+  width: 80%;
+  height: 300px;
+}
+
+/* gallery */
+#gallery {
+  min-height: 100vh;
+  padding: 70px 0px;
+}
+
+#gallery h1 {
+  color: var(--green);
+  font-weight: 700;
+}
+
+#gallery img {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* rsvp */
+#rsvp {
+  min-height: 100vh;
+  /* height: 100%; */
+  background-color: var(--dark);
+  color: var(--white);
+}
+.rsvp-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100% - 5%);
+  width: calc(100% - 5%);
+}
+
+.rsvp-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#disqus_thread iframe {
+  width: 100px !important;
+}
+
+/* ucapan */
+#ucapan {
+  background-color: var(--dark);
+  color: var(--white);
+  position: relative;
+}
+
+.border-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0; /* Pastikan gambar border berada di belakang konten */
+  pointer-events: none; /* Menghindari interaksi dengan gambar border */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+}
+
+.border-wrapper .b-top {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.border-wrapper .b-bottom {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  position: relative;
+  bottom: 20px;
+}
+
+/* penutup */
+#penutup {
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: var(--white);
+}
+.penutup-child {
+  max-height: 100%;
+  max-width: 100%;
+  height: calc(100% - 5%);
+  width: calc(100% - 5%);
+}
+
+.penutup-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+#penutup .penutup-body h2 {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 40px !important;
+  color: var(--gold);
+  margin-top: 20px !important;
+}
+
+/* wa */
+#wa {
+  padding: 50px 0px;
+  background-color: var(--dark);
+  color: white;
+}
+
+#wa h1 {
+  color: var(--green);
+  font-weight: 700;
+}
+
+#wa a {
+  background-color: var(--yellow);
+}
+
+/* menu */
+#menu {
+  position: fixed;
+  z-index: 99999;
+  display: none;
+  bottom: 0px;
+  width: 100%;
+}
+
+#menu .menu-icon {
+  padding: 10px;
+}
+
+#menu .menu-icon a {
+  color: var(--dark);
+}
+
+#menu .menu-icon-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 12px;
+  background-color: var(--gold);
+  border-radius: 10px;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-cream {
+  color: var(--cream);
+}
+
+.text-great-vibes {
+  font-family: "Great Vibes", cursive !important;
+}
+
+.bg-gold {
+  background-color: var(--gold) !important;
+}
+
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+.bg-white {
+  background-color: var(--white) !important;
+}
+.bg-cream {
+  background-color: var(--cream) !important;
+}
+
+#music-play i,
+#music-pause i {
+  font-size: 30px;
+  bottom: 40px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 3s linear infinite;
+}

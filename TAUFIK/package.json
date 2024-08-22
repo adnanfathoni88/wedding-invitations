@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "puppeteer": "^23.1.0"
+  }
+}
