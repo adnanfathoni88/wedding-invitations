@@ -21,6 +21,9 @@
     <script src="countdown/dist/simplyCountdown.min.js"></script>
     <!-- AOS ANIMATE -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- sweer alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="position-relative">
@@ -90,7 +93,7 @@
             </div>
             <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100 ">
                 <div class="mempelai-body w-75">
-                    <div class="detail-sambutan mb-3">
+                    <div data-aos="fade-up" class="detail-sambutan mb-3">
                         <p class="text-gold text-great-vibes">Assalamu'alaikum Wr. Wb. </p>
                         <span>
                             Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian
@@ -100,7 +103,8 @@
                         </span>
                     </div>
                     <div class="mempelai-group">
-                        <div class="mempelai-item d-flex flex-column align-items-center rounded text-center p-2">
+                        <div data-aos="fade-right" data-aos-duration="1000"
+                            class="mempelai-item d-flex flex-column align-items-center rounded text-center p-2">
                             <div class="foto-mempelai bg-danger mb-4">
                                 <img src="./img/person/men-4.jpeg" class="img-fluid rounded-circle" alt="">
                             </div>
@@ -113,7 +117,8 @@
                         <span class="text-great-vibes" style="font-size: 20px;">
                             &
                         </span>
-                        <div class="mempelai-item d-flex flex-column align-items-center rounded p-2">
+                        <div data-aos="fade-left" data-aos-duration="1000"
+                            class="mempelai-item d-flex flex-column align-items-center rounded p-2">
                             <div class="foto-mempelai bg-danger mb-4">
                                 <img src="./img/person/women-1.jpeg" class="img-fluid rounded-circle" alt="">
                             </div>
@@ -134,7 +139,7 @@
                 <img src="./img/components/border-1.png" alt="">
             </div>
             <div class="container d-flex flex-column justify-content-center align-items-center text-center h-100 w-75">
-                <div class="bg-cream text-dark rounded p-4 mb-4 w-100">
+                <div data-aos="fade-up" data-aos-duration="1000" class="bg-cream text-dark rounded p-4 mb-4 w-100">
                     <h4 class="text-dark text-great-vibes"><b>Akad Nikah</b></h4>
                     <hr style="margin: 8px 0px;">
                     <span>
@@ -142,7 +147,7 @@
                         Pukul : 09.00 WIB <br>
                     </span>
                 </div>
-                <div class="bg-cream text-dark rounded p-4">
+                <div data-aos="fade-up" data-aos-duration="1000" class="bg-cream text-dark rounded p-4">
                     <h4 class="text-dark text-great-vibes"><b>Resepsi</b></h4>
                     <hr style="margin: 8px 0px;">
                     <span>
@@ -156,7 +161,7 @@
 
         <!-- lokasi -->
         <section class="position-relative d-flex flex-column justify-content-center align-items-center" id="lokasi">
-            <div
+            <div data-aos="fade-up" data-aos-duration="1000"
                 class="container position-relative z-1 d-flex flex-column justify-content-center align-items-center text-center h-100 ">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3646116776135!2d110.73109057461316!3d-7.856856278094602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a375b70763b89%3A0x7caefe924f90a204!2sKAPITA%20SEMIN!5e0!3m2!1sid!2sid!4v1723905268682!5m2!1sid!2sid"
@@ -216,27 +221,27 @@
             <div class="rsvp-child position-absolute">
                 <img src="./img/components/border-1.png" alt="">
             </div>
-            <div
+            <div data-aos="fade-up" data-aos-duration="1000"
                 class="position-relative container d-flex flex-column justify-content-center align-items-center text-center h-100">
                 <div data-aos="zoom-in-down">
-                    <h1 class="text-gold ">Form Kehadiran</h1>
+                    <h3 class="text-gold">Form Kehadiran</h3>
                     <p class="opacity-75">Harap konfirmasi kehadiran Anda dengan mengisi form di bawah ini.</p>
                 </div>
                 <div class="mt-2 w-100 text-center d-flex flex-column align-items-center justify-content-center">
                     <form id="my-form" class="rsvp-form" method="post" style="width: 80%;"
-                        action="https://script.google.com/macros/s/AKfycbw_i2Ye3F0ZOQLBYUplg7PCXDH2198SOhok8n1COu2hiDMPPyfpp_jxe1Pmd8o_Uxa2/exec">
+                        action="https://script.google.com/macros/s/AKfycbzN_h6TcswgkuOgHLRo2pHHBxz24DAyccQkutwkz186yR0Y-dJKoInW-CCA5E_hwvdB/exec">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required>
                         </div>
                         <div class="mb-3">
-                            <textarea name="ucapan" class="form-control"
-                                placeholder="Tulis ucapan di sini ..."></textarea>
+                            <textarea name="ucapan" class="form-control" placeholder="Tulis ucapan di sini ..."
+                                required></textarea>
                         </div>
                         <div class="mb-3">
-                            <select class="form-control" name="kehadiran">
+                            <select class="form-control" name="kehadiran" required>
                                 <option value="">-- Pilih --</option>
-                                <option value="1">Hadir</option>
-                                <option value="0">Tidak Hadir</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Tidak">Tidak Hadir</option>
                             </select>
                         </div>
 
@@ -352,6 +357,7 @@
             });
         </script>
 
+
         <!-- ucapan -->
         <script>
             /**
@@ -381,8 +387,8 @@
         <script>
             simplyCountdown('.simply-countdown', {
                 year: 2024, // required
-                month: 7, // required
-                day: 20, // required
+                month: 9, // required
+                day: 15, // required
                 hours: 8, // Default is 0 [0-23] integer
                 minutes: 0, // Default is 0 [0-59] integer
                 seconds: 0, // Default is 0 [0-59] integer
@@ -408,17 +414,21 @@
                         body: data,
                     })
                         .then(() => {
-                            const toast = new bootstrap.Toast(document.querySelector('.toast'));
-
-                            // scroll to hero
-                            const heroElement = document.getElementById('hero');
-                            heroElement.scrollIntoView({ behavior: 'smooth' });
-
-                            toast.show();
+                            // sweer alert
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Terima Kasih',
+                                text: 'ucapan dan kehadiran Anda telah kami terima.',
+                            });
                             form.reset();
+
+                            // disable button
+                            const btn = document.querySelector('button[type="submit"]');
+                            btn.disabled = true;
                         })
                 });
             });
+
         </script>
 
         <script>
